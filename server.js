@@ -27,6 +27,11 @@ app.use(bodyParser.json())
 // Routes
 app.use('/api', require('./routes/index.js'));
 
+//redirect
+app.get('*', (req,res,next)=> {
+    res.redirect('/api')
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
